@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>我的藏书</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+<ion-list>
+  <ion-item *ngFor="let book of books">
+    <ion-thumbnail item-left>
+      <img src="img/thumbnail-puppy-1.jpg">
+    </ion-thumbnail>
+  </ion-item>
+</ion-list>

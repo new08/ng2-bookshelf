@@ -8,14 +8,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { HomePage } from '../home/home';
+import { BookshelfPage } from '../bookshelf/bookshelf.component';
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 export var TabsPage = (function () {
     function TabsPage() {
         // this tells the tabs component which Pages
         // should be each tab's root Page
-        this.tab1Root = HomePage;
+        this.tab1Root = BookshelfPage;
         this.tab2Root = AboutPage;
         this.tab3Root = ContactPage;
     }

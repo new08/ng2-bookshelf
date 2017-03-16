@@ -1,6 +1,3 @@
-/**
- * 配置帮助 http://www.w3cschool.cn/typescript/typescript-tsconfig-json.html
- */
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
