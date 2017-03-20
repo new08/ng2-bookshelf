@@ -3,6 +3,7 @@
  */
 import {Component, OnInit} from '@angular/core';
 import {NavController} from 'ionic-angular';
+import {ActivatedRoute, Params} from '@angular/router';
 import {Book} from "../../model/book";
 import {BookService} from "../../service/books.service";
 import {Subject} from "rxjs";
@@ -14,27 +15,15 @@ import {Subject} from "rxjs";
 export class BookshelfPage implements OnInit {
   ngOnInit(): void {
     this.route.params
-      .switchMap((params: Params) => this.heroService.getHero(+params['id']))
-      .subscribe( hero => this.hero = hero);
-
-
-    this.bookService.getBook(id).then(
-      book => this.book = book
-    )
+      .switchMap((params: Params) => this.bookService.getBook(+params['id']))
+      .subscribe(book => this.book = book);
   }
 
   book: Book;
 
-  constructor(private bookService: BookService, public navCtrl: NavController) {
+  constructor(private bookService: BookService, private route: ActivatedRoute,
+              private location: Location, public navCtrl: NavController) {
 
-  }
-
-  getBooks(term: string): void{
-    this.bookService.getBooks().then(
-      books => this.books = books.slice(0,5).filter((book) => {
-        return (book.title.toLowerCase().indexOf(term.toLowerCase()) > -1);
-      })
-    )
   }
 
 }
