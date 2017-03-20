@@ -6,7 +6,6 @@ import {NavController} from 'ionic-angular';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Book} from "../../model/book";
 import {BookService} from "../../service/books.service";
-import {Subject} from "rxjs";
 
 @Component({
   selector: 'page-bookshelf',
